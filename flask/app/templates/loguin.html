@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="css" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+	<img class="wave" src="{{url_for('static',filename='img/wave.png')}}">
+	<div class="container">
+		<div class="img">
+			<img src="{{url_for('static',filename='img/bg.svg')}}">
+		</div>
+		<div class="login-content">
+			{% with messages = get_flashed_messages() %}
+  				{% if messages %}
+    				<ul class=flashes>
+    				{% for message in messages %}
+      				<li>{{ message }}</li>
+    				{% endfor %}
+    				</ul>
+  				{% endif %}
+			{% endwith %}
+			{% block body %}{% endblock %}
+			<form method="POST" action="/">
+				<img src="{{url_for('static',filename='img/avatar.svg')}}">
+				<h2 class="title">Welcome</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>email</h5>
+           		   		<input type="email" class="input">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+						<input type="password" class="input">
+            	   </div>
+            	</div>
+            	<a href="{{ url_for('create_user') }}">Creat new user?</a>
+            	<input type="submit" class="btn" value="Login">
+            </form>
+        </div>
+    </div>	
+</body>
+</html>

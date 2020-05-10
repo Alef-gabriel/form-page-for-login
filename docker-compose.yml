@@ -1,0 +1,19 @@
+version: "3.7"
+
+services: 
+
+    flask:
+        build: ./flask
+        container_name: flask
+        restart: alweys
+        environment: 
+            - APP_NAME=MyFlaskApp
+            - DB_USERNAME=exemple
+        expose: 
+            - 8080
+    nginx:
+        build: ./nginx
+        container_name: nginx
+        restart: alweys
+        ports: 
+            - "80:80"
