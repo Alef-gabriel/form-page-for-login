@@ -1,4 +1,4 @@
-# form-page-for-loguin
+# form-page-for-login
 ## form flask back-and and front-end
 before using, install the MySQL client according to your operating system and your version in the work directory,configure nginx
 ### things to do:
